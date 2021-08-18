@@ -1,0 +1,40 @@
+<form
+  class="form-container"
+  [formGroup]="transactionForm"
+  (ngSubmit)="onSubmit()"
+>
+  <h4 class="title">Add new transaction</h4>
+  <div class="form-control">
+    <label class="label" for="name">Name</label>
+    <input
+      class="form-input"
+      id="name"
+      type="text"
+      formControlName="name"
+      placeholder="Enter name..."
+    />
+  </div>
+  <div class="form-control">
+    <label class="label" for="amount">Amount</label>
+    <input
+      class="form-input"
+      id="amount"
+      type="number"
+      min="1"
+      formControlName="amount"
+      placeholder="Enter amount..."
+    />
+  </div>
+  <div class="btn-wrapper">
+    <button
+      class="btn add-btn"
+      type="submit"
+      [disabled]="!transactionForm.valid"
+    >
+      Add transaction
+    </button>
+    <button class="btn close-btn" type="button" (click)="closeForm()">
+      Close
+    </button>
+  </div>
+</form>

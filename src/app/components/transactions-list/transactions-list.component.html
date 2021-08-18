@@ -1,0 +1,7 @@
+<h4 class="title">Transactions list</h4>
+<div class="transaction-container">
+  <app-transaction
+    *ngFor="let transaction of (transactionsList$ | async) || []"
+    [transaction]="transaction"
+  ></app-transaction>
+</div>

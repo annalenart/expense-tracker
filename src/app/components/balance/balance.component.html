@@ -1,0 +1,16 @@
+<ng-container *ngIf="balance$ | async as balance">
+  <div class="balance">
+    <h4 class="title">YOUR BALANCE</h4>
+    <span class="total dollar">{{ balance.total }}</span>
+  </div>
+  <div class="ie-container">
+    <div class="costs">
+      <span>INCOME</span>
+      <span class="amount income dollar">{{ balance.income }}</span>
+    </div>
+    <div class="costs">
+      <span>EXPENSE</span>
+      <span class="amount expense dollar">{{ -balance.expense }}</span>
+    </div>
+  </div>
+</ng-container>

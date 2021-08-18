@@ -1,0 +1,51 @@
+@import "/src/colors";
+
+.form-container {
+  display: grid;
+  grid-gap: 10px;
+  font-size: 18px;
+
+  .title {
+    font-size: 20px;
+    border-bottom: 1.5px solid rgba($color: #000000, $alpha: 0.1);
+    padding-bottom: 5px;
+  }
+
+  .form-control {
+    display: grid;
+    grid-gap: 5px;
+
+    .label {
+      font-weight: 700;
+    }
+
+    .form-input {
+      outline: none;
+      border: none;
+      background-color: $block-bac;
+      border-radius: 1px;
+      box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      font-weight: 700;
+
+      &::placeholder {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+      margin-top: 10px;
+      border: none;
+      font: inherit;
+      color: $block-bac;
+      padding: 5px 20px;
+      background-color: $black;
+      border-radius: 5px;
+    }
+  }
+}

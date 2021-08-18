@@ -1,0 +1,68 @@
+@import "/src/colors";
+:host {
+  display: grid;
+  grid-gap: 15px;
+
+  @media (min-width: 500px) {
+    grid-gap: 30px;
+  }
+}
+
+.header {
+  text-align: center;
+}
+
+.dollar::before {
+  content: "$";
+}
+
+.balance {
+  .title {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .total {
+    font-size: 40px;
+    font-weight: 700;
+  }
+}
+
+.ie-container {
+  background-color: $block-bac;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 1px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
+  padding: 20px 10px;
+  height: 100px;
+
+  .costs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 500px) {
+      font-size: 18px;
+    }
+
+    &:not(:first-child) {
+      border-left: 1.5px solid rgba(black, 0.1);
+    }
+
+    .amount {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .income {
+      color: $green;
+    }
+
+    .expense {
+      color: $red;
+    }
+  }
+}

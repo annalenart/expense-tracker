@@ -1,0 +1,18 @@
+:host {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  max-width: 500px;
+
+  @media (min-width: 500px) {
+    gap: 40px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+
+.header {
+  text-align: center;
+}

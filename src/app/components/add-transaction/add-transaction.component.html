@@ -1,0 +1,13 @@
+<div class="add-transaction" *ngIf="isClosed; else transactionFormTmpl">
+  <h3 class="title">Add new transaction</h3>
+  <div class="btns-container">
+    <button class="btn income" (click)="addIncome()">INCOME</button>
+    <button class="btn expense" (click)="addExpense()">EXPENSE</button>
+  </div>
+</div>
+<ng-template #transactionFormTmpl>
+  <app-transaction-form
+    (closeFormClicked)="closeForm()"
+    [expenseClicked]="expenseClicked"
+  ></app-transaction-form>
+</ng-template>
