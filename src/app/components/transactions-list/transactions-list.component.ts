@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {  Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CommunicationService } from 'src/app/communication.service';
-import {  Transactions, TransactionsProviderService } from 'src/app/transactions-provider.service.ts.service';
+import { Transactions, TransactionsProviderService } from 'src/app/transactions-provider.service';
 
 @Component({
   selector: 'app-transactions-list',
@@ -9,11 +9,12 @@ import {  Transactions, TransactionsProviderService } from 'src/app/transactions
   styleUrls: ['./transactions-list.component.scss']
 })
 export class TransactionsListComponent implements OnInit {
-  transactionsList$: Observable<Transactions>
+  transactionsList$: Observable<Transactions>;
 
-  constructor(private transactionsProvider: TransactionsProviderService, private communication: CommunicationService) { }
+  constructor(private transactionsProvider: TransactionsProviderService, private communication: CommunicationService) {
+  }
 
   ngOnInit() {
-   this.transactionsList$ = this.communication.transactionsList$;
+    this.transactionsList$ = this.communication.transactionsList$;
   }
 }

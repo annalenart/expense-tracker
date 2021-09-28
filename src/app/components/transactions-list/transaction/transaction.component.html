@@ -1,3 +1,5 @@
 <span class="name">{{ transaction.name }}</span>
 <span class="amount">{{ transaction.amount }}</span>
-<div class="delete {{ transaction.amount > 0 ? 'income' : 'expense' }}"></div>
+<div class="delete {{ transaction.amount > 0 ? 'income' : 'expense' }}"
+     (click)="onDelete(transaction.id)">
+</div>

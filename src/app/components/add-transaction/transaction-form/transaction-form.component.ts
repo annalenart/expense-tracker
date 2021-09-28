@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CommunicationService } from 'src/app/communication.service';
-import { Transaction, TransactionsProviderService } from 'src/app/transactions-provider.service.ts.service';
-
+import { Transaction, TransactionsProviderService } from 'src/app/transactions-provider.service';
 
 @Component({
   selector: 'app-transaction-form',
@@ -14,20 +13,21 @@ export class TransactionFormComponent implements OnInit {
   @Output() closeFormClicked = new EventEmitter<void>();
 
   transactionForm: FormGroup;
-  
-  constructor(private transactionsProvider: TransactionsProviderService, private communication: CommunicationService) { }
+
+  constructor(private transactionsProvider: TransactionsProviderService, private communication: CommunicationService) {
+  }
 
   ngOnInit(): void {
     this.transactionForm = new FormGroup({
       name: new FormControl(null, Validators.required),
       amount: new FormControl(null, Validators.required)
-    })
+    });
   }
 
   onSubmit(): void {
     let transaction = this.expenseClicked ? this.transactionsProvider.addTransaction(this.negativeAmount())
-    : this.transactionsProvider.addTransaction(this.transactionForm.value);
-    transaction.subscribe(() => this.communication.refreshSub$.next()) 
+      : this.transactionsProvider.addTransaction(this.transactionForm.value);
+    transaction.subscribe(() => this.communication.refreshSub$.next());
     this.closeForm();
     this.transactionForm.reset();
   }
