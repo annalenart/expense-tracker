@@ -34,7 +34,6 @@ export class TransactionFormComponent implements OnInit {
 
   closeForm(): void {
     this.closeFormClicked.emit();
-    this.expenseClicked = false;
   }
 
   negativeAmount(): Transaction {

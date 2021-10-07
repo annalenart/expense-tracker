@@ -1,26 +1,24 @@
 @import "/src/colors";
 
-.add-transaction {
-  .title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 20px;
-  }
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
 
-  .btns-container {
-    text-align: center;
+.btns-container {
+  text-align: center;
 
-    .btn {
-      background-color: $block-bac;
-      font: inherit;
-      border: none;
-      outline: none;
-      padding: 10px 20px;
-      border-radius: 1px;
+  .btn {
+    background-color: $block-bac;
+    font: inherit;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 1px;
 
-      &:not(:first-of-type) {
-        border-left: 1.5px solid rgba(black, 0.1);
-      }
+    &:not(:first-of-type) {
+      border-left: 1.5px solid rgba(black, 0.1);
     }
   }
 }

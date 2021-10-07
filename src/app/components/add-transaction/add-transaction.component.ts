@@ -11,16 +11,15 @@ export class AddTransactionComponent {
 
   closeForm() {
     this.isClosed = !this.isClosed;
-    this.expenseClicked = false;
   }
 
   addIncome() {
-    this.closeForm()
     this.expenseClicked = false;
+    this.closeForm();
   }
 
   addExpense() {
-    this.closeForm()
     this.expenseClicked = true;
+    this.closeForm();
   }
 }

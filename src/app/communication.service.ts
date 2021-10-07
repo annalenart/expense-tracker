@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { shareReplay, startWith, switchMap } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { shareReplay, switchMap } from 'rxjs/operators';
 import { Transactions, TransactionsProviderService } from './transactions-provider.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommunicationService {
-  refreshSub$ = new Subject<void>();
+  refreshSub$ = new BehaviorSubject<void>(undefined);
   transactionsList$: Observable<Transactions>;
 
   constructor(transactionsProvider: TransactionsProviderService) {
     this.transactionsList$ = this.refreshSub$.pipe(
-      startWith(undefined),
       switchMap(() => transactionsProvider.getTransactions()),
       shareReplay(1)
     );

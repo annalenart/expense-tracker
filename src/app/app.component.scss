@@ -2,14 +2,23 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   padding: 30px;
+  overflow-y: scroll;
+
+  @media (min-width: 500px) {
+    align-items: center;
+  }
+}
+
+.container {
+  width: 100%;
   max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
   @media (min-width: 500px) {
     gap: 40px;
-    margin: 0 auto;
-    justify-content: center;
   }
 }
 
