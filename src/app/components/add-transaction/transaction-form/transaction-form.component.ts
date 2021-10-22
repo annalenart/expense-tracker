@@ -25,7 +25,7 @@ export class TransactionFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    let transaction = this.expenseClicked ? this.transactionsProvider.addTransaction(this.negativeAmount())
+    const transaction = this.expenseClicked ? this.transactionsProvider.addTransaction(this.negativeAmount())
       : this.transactionsProvider.addTransaction(this.transactionForm.value);
     transaction.subscribe(() => this.communication.refreshSub$.next());
     this.closeForm();
